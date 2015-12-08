@@ -1,0 +1,8 @@
+Node JS is a server side open source platform written in JS to run JS applications.
+V8 is the engine which runs the JS programs, which chrome also uses.
+
+Till now JS only runs in browsers. The makers of Node js took that V8 engine and made an env so that we can run our JS on this server on our machines.
+New stuff which we can do use Node JS is:
+1) Use of modules for separation of files and how they wcan be used in  a file.
+2) npm to download different modules/packages.
+

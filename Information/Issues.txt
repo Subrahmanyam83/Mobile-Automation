@@ -1,0 +1,24 @@
+After finishing my Android tests, I moved on to iOS. This is where I began to experience problems with Appium:
+- Tests run very slowly (may have been fixable with some research, but after encountering other problems I declined to investigate further)
+- No support for iOS 8.4 (support is supposed to be on the way, but for now it's a blocker)
+- Scrolling (swipe, scrollTo) does not work on the simulator. (a search of this topic will reveal posts from many users who had the same problem) I noticed this with the 8.3 simulator and with Appium 1.4.0, but the issue dates back to previous versions of Appium
+
+Issues:
+Unreliable.
+scrolling events issues.
+Cannot created a new Webdriver Session.
+Issues with Safari browser.
+ALerts are not handled properly.
+Tests run very slow on simulators.
+
+Good:
+1) Targetting multiple devices at one go.
+2) Same suites can be run on diff devices.
+3) Webdriver's JSON wore protocol. All capabilities of webdriver.
+4) No technology restrictions with this tool.
+
+Tests on real devices
+Running test on a device is, always in my opinion, the best solution because it offers a testing environment completely aligned with the running environment: tests run on those devices where your apps will be used  once published on stores. However devices must be connected to the Appium server via USB at least, and this is not always a very nice thing. ADB has a known issue for which a device disconnects after a while (even though it remained plugged all the time): because of this your tests might fail after a while and Appium will report that a device could not be found! I had to write a component which resets ADB after some time so that devices will not disconnect.
+
+Tests on emulators or simulators
+On the other hand emulators/simulators will never disconnect from Appium. They also offer nice options like the ability of choosing the orientation or other hardware-related configurations. However your tests will run much slower (sadly, my tests ran 3 times slower) and do expect some crazy behavior from the Android emulator which sometimes shuts down unexpectedly. Another problem is that emulators tend to allocate a lot of memory.

@@ -1,0 +1,30 @@
+1) .net framework
+2) node.js
+3) android sdk
+4) appium - This now is a part of sdk. So no need to download it again.
+
+1) Download ANDROID - SDK.
+2) Set the android sdk path till sdk in ANDROID_HOME and in PATH - C:\RV\OpenSource\android-sdk_r24.3.4-windows\android-sdk-windows\ [You may require restart sometimes after you change the PATH variables].
+3) Go to the SDK folder and start the ADB Server
+3) Create a virtual device.
+4) Start the Appium Server and check wheteher its started or not by hitting the url: http://127.0.0.1:4723/wd/hub
+	It should show following message: That URL did not map to a valid JSONWP resource
+5) Create a JAVA Project and create a TESTNG method and write the following code:
+		
+	class AndroidTest {
+
+    @Test
+    public void firstTest(){
+        DesiredCapabilities capibilities = DesiredCapabilities.android()
+        capibilities.setCapability(CapabilityType.PLATFORM, "Android");
+        capibilities.setBrowserName("Browser")
+        capibilities.setCapability("deviceName","Android-2")
+        capibilities.setCapability("platformVersion","4.4.2")
+        capibilities.setCapability("platformName","Android")
+        def driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"),capibilities);
+        driver.get("http://www.facebook.com")
+    }
+}
+
+
+Appium is an open source test automation framework for use with native, hybrid and mobile web apps. 
