@@ -1,3 +1,5 @@
+READ the Setup and other Information regarding APPIUM in the Instructions Folder.
+
 Free Public Access Automation Projects Created by R.V.Subrahmanyam.
 
 Technologies used in the Projects created are:
